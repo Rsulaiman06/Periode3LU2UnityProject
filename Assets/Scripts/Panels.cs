@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ public class Panels : MonoBehaviour
     public GameObject LoginPanel;
     public GameObject registerPanel;
     public GameObject errorPanelForLogin;
-    public GameObject succesErrorPanelForRegister;
-    //public GameObject createEnvironmentPanel;
+    public GameObject succesPanelForRegister;
+    public GameObject errorPanelForRegister;
 
     [Header("Canvas")]
     public GameObject loginRegisterCanvas;
@@ -28,7 +29,8 @@ public class Panels : MonoBehaviour
         StartPanel.SetActive(false);
         registerPanel.SetActive(false);
         errorPanelForLogin.SetActive(false);
-        succesErrorPanelForRegister.SetActive(false);
+        errorPanelForRegister.SetActive(false);
+        succesPanelForRegister.SetActive(false);
         LoginPanel.SetActive(true);
     }
 
@@ -37,7 +39,8 @@ public class Panels : MonoBehaviour
         StartPanel.SetActive(false);
         LoginPanel.SetActive(false);
         errorPanelForLogin.SetActive(false);
-        succesErrorPanelForRegister.SetActive(false);
+        errorPanelForRegister.SetActive(false);
+        succesPanelForRegister.SetActive(false);
         registerPanel.SetActive(true);
     }
 
@@ -46,7 +49,37 @@ public class Panels : MonoBehaviour
         LoginPanel.SetActive(false);
         registerPanel.SetActive(false);
         errorPanelForLogin.SetActive(false);
-        succesErrorPanelForRegister.SetActive(false);
+        errorPanelForRegister.SetActive(false);
+        succesPanelForRegister.SetActive(false);
         StartPanel.SetActive(true);
+    }
+
+    public void SetLoginErrorPanelActive()
+    {
+        StartPanel.SetActive(false);
+        LoginPanel.SetActive(false);
+        registerPanel.SetActive(false);
+        errorPanelForRegister.SetActive(false);
+        succesPanelForRegister.SetActive(false);
+        errorPanelForLogin.SetActive(true);
+    }
+
+    public void SetRegisterSuccessPanelActive()
+    {
+        StartPanel.SetActive(false);
+        LoginPanel.SetActive(false);
+        registerPanel.SetActive(false);
+        errorPanelForLogin.SetActive(false);
+        errorPanelForRegister.SetActive(false);
+        succesPanelForRegister.SetActive(true);
+    }
+    public void SetRegisterErrorPanelActive()
+    {
+        StartPanel.SetActive(false);
+        LoginPanel.SetActive(false);
+        registerPanel.SetActive(false);
+        errorPanelForLogin.SetActive(false);
+        succesPanelForRegister.SetActive(false);
+        errorPanelForRegister.SetActive(true);
     }
 }
